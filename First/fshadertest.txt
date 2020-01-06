@@ -1,0 +1,13 @@
+in vec4 vColor;
+out vec4 FragColor;
+uniform float rColor;
+uniform float gColor;
+uniform float bColor;
+
+void main()
+{
+	FragColor.w = vColor.w;
+	FragColor.x = (vColor.x + rColor) / 2;
+	FragColor.y = (vColor.y + gColor) / 2;
+	FragColor.z = (vColor.z + bColor) / 2;
+}

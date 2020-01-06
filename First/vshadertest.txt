@@ -1,0 +1,11 @@
+layout (location = 0) in vec3 aPos;
+out vec4 vColor;
+layout (location = 1) in float alpha;
+void main()
+{
+	gl_Position = vec4(aPos, 1.0);
+	vec4 newColor = vec4(aPos / 1.0 + 0.5, alpha);
+
+	
+	vColor = newColor;
+}

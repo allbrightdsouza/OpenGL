@@ -1,0 +1,12 @@
+#version 330 core
+out vec4 FragColor;
+in vec2 TexCoord;
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+uniform float alpha;
+void main()
+{
+	vec4 colTex1 = texture(texture1, TexCoord);
+	vec4 colTex2 = texture(texture2, TexCoord);
+	FragColor = mix(colTex1, colTex2 , colTex2.a * alpha);
+}
